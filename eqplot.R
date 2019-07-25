@@ -4,17 +4,6 @@
 # ggplot2 modifiers. eqplot therefore provides a rough framework that displays a simple 
 #but effective way of presenting multiple equivalence tests
 #------------------------------------------------------------------------------------------
-#input. 
-library(TOSTER)
-L1<- TOSTtwo.raw(m1=63965.83, m2=65799.17, sd1=17987.89,sd2=17971.16, n1=706, n2=706, low_eqbound = -3198 , high_eqbound = 3198 ,
-                      alpha=0.05, var.equal = F, plot = T, verbose = T)
-L2 <- TOSTtwo.raw(m1=73289.51, m2=74920.41, sd1=19877.33,sd2=20626.45, n1=753, n2=753, low_eqbound = -3664 , high_eqbound = 3664 ,
-                      alpha=0.05, var.equal = F, plot = T, verbose = T)
-L3<- TOSTtwo.raw(m1=76024.44, m2=74147.40, sd1=20920.53,sd2=19614.33, n1=790, n2=790, low_eqbound = -3801 , high_eqbound = 3801 ,
-                        alpha=0.05, var.equal = F, plot = T, verbose = T)
-L4 <- TOSTtwo.raw(m1=74530.92, m2=73227.33, sd1=20264.43,sd2=19343.64, n1=300, n2=300, low_eqbound = -3726 , high_eqbound = 3726 ,
-                       alpha=0.05, var.equal = F, plot = T, verbose = T)
-#------------------------------------------------------------------------------------------
 eqplot <- function(z,..., xval=NULL)
 { 
   options(scipen = 999)
@@ -46,5 +35,4 @@ eqplot <- function(z,..., xval=NULL)
               panel.grid.minor = element_blank()) #standard ggplot2 modifiers.
       warning("This plot can be modified using any ggplot function or parameter. Consider tweaking the plot until you're satisfied!")
 }
-#----------------------------------------------------------------------------------------
-eqplot(L1,L2, L3, L4, xval = c(1,2,3,4)) #
+
